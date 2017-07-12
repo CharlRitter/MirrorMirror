@@ -1,3 +1,3 @@
 # MirrorMirror
-Internship javascript
+Internship javascript. 
 Please read the ReadMe.txt file.
