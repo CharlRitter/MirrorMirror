@@ -1,6 +1,6 @@
 Charl Ritter
 Start date: 12 July 2017
-Finish date: 12 July 2017
+Finish date: 13 July 2017
 JourneyApps internship - MirrorMirror
 
 Instructions:

@@ -29,20 +29,35 @@ for (i in output.items) {
     var temp = JSON.parse(xhrFollowers.responseText);
 
     numFollowers = temp.followers;
-    //An if statement to add a zero infront of any number of followers less than ten, to make the sorting of the array work.
+    //If statements to add zeros infront of any number of followers, to make the sorting of the array work.
     if(numFollowers<10){
+        numFollowers = "00"+numFollowers;
+    }
+    else if(numFollowers<100 && numFollowers>=10){
         numFollowers = "0"+numFollowers;
     }
     userArr.push(numFollowers+" "+login); //add number of followers and username to an array.
     numFollowers = 0;
 }
 
-userArr.sort();//Sorts the elements of the array.
+userArr.sort(); //Sorts the elements of the array.
+userArr.reverse(); //Reverses the order of the elements.
 
-userArr.reverse();//Reverses the order of the elements.
+var flag = 0;
+for(i in userArr){
+    while(flag == 0){
+        if(userArr[i].charAt(0) != 0){
+            flag = 1;
+        }
+        else{
+            userArr[i] = userArr[i].substr(1, userArr[i].length);
+        }
+    }
+    flag = 0;
+}
 
 //Print out a heading and the 10 most popular javascript developers in Cape Town.
 console.log("The 10 most popular javascript developers in Cape Town are:");
-for(i=0; i<10; i++){
-    console.log(i+1 +") "+ userArr[i]);
+for(k=0; k<10; k++){
+    console.log(k+1 +") "+ userArr[k]);
 }
